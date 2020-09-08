@@ -1,0 +1,31 @@
+{
+    "name": "dnsoft/menu",
+    "description": "This is module core for all other module",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dong Nguyen",
+            "email": "dong.joseph2810@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "lavary/laravel-menu": "~1.7",
+        "kalnoy/nestedset": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dnsoft\\Menu\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dnsoft\\Menu\\MenuServiceProvider"
+            ]
+        }
+    }
+}
