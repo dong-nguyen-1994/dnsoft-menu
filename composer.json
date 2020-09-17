@@ -16,10 +16,7 @@
     "autoload": {
         "psr-4": {
             "Dnsoft\\Menu\\": "src/"
-        },
-        "files": [
-            "helpers/helpers.php"
-        ]
+        }
     },
     "extra": {
         "laravel": {
