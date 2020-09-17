@@ -1,6 +1,6 @@
 <?php
 
-namespace Dnsoft\Menu\Repositories;
+namespace Dnsoft\Menu\Repositories\Eloquents;
 
 use Dnsoft\Core\Repositories\BaseRepository;
 

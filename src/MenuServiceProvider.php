@@ -4,10 +4,10 @@ namespace Dnsoft\Menu;
 
 use Dnsoft\Acl\Facades\Permission;
 use Dnsoft\Core\Support\BaseModuleServiceProvider;
-use Dnsoft\Media\Repositories\MenuRepository;
 use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Models\MenuItem;
-use Dnsoft\Menu\Repositories\MenuItemRepository;
+use Dnsoft\Media\Repositories\Eloquents\MenuRepository;
+use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
 
