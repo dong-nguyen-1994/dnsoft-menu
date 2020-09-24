@@ -1,13 +1,11 @@
 <?php
 
-namespace Dnsoft\Menu\Http\Controllers;
-
-use Dnsoft\Menu\Models\Menu;
+namespace Dnsoft\Menu\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class MenuController extends Controller
+class MenuItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,10 +41,10 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Menu  $menu
+     * @param  \App\MenuItem  $menuItem
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show(MenuItem $menuItem)
     {
         //
     }
@@ -54,10 +52,10 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Menu  $menu
+     * @param  \App\MenuItem  $menuItem
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit(MenuItem $menuItem)
     {
         //
     }
@@ -66,10 +64,10 @@ class MenuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Menu  $menu
+     * @param  \App\MenuItem  $menuItem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Menu $menu)
+    public function update(Request $request, MenuItem $menuItem)
     {
         //
     }
@@ -77,10 +75,10 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Menu  $menu
+     * @param  \App\MenuItem  $menuItem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Menu $menu)
+    public function destroy(MenuItem $menuItem)
     {
         //
     }

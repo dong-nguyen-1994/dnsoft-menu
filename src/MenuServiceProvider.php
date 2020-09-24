@@ -6,7 +6,7 @@ use Dnsoft\Acl\Facades\Permission;
 use Dnsoft\Core\Support\BaseModuleServiceProvider;
 use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Models\MenuItem;
-use Dnsoft\Media\Repositories\Eloquents\MenuRepository;
+use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
 use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
