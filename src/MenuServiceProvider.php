@@ -3,6 +3,7 @@
 namespace Dnsoft\Menu;
 
 use Dnsoft\Acl\Facades\Permission;
+use Dnsoft\Core\Events\CoreAdminMenuRegistered;
 use Dnsoft\Core\Support\BaseModuleServiceProvider;
 use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Models\MenuItem;
@@ -10,6 +11,7 @@ use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
 use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use Illuminate\Support\Facades\Event;
 
 class MenuServiceProvider extends BaseModuleServiceProvider
 {
@@ -32,6 +34,7 @@ class MenuServiceProvider extends BaseModuleServiceProvider
         });
 
         $this->registerPermissions();
+        $this->registerAdminMenu();
     }
 
     public function registerPermissions()
@@ -40,5 +43,12 @@ class MenuServiceProvider extends BaseModuleServiceProvider
         Permission::add('menu.admin.create', __('menu::permission.menu.create'));
         Permission::add('menu.admin.edit', __('menu::permission.menu.edit'));
         Permission::add('menu.admin.destroy', __('menu::permission.menu.destroy'));
+    }
+
+    public function registerAdminMenu()
+    {
+        Event::listen(CoreAdminMenuRegistered::class, function($menu) {
+            $menu->add('Menu', ['route' => 'menu.admin.menu.index', 'parent' => $menu->system->id])->data('order', 9);
+        });
     }
 }
