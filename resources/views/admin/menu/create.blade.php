@@ -23,7 +23,7 @@
             @csrf
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
@@ -39,25 +39,6 @@
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">{{ __('core::button.save') }}</button>
                             <button class="btn btn-secondary" name="continue" value="1" type="submit">{{ __('core::button.save_and_edit') }}</button>
-                        </div>
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-md-6">
-{{--                    <dnsoft-tree></dnsoft-tree>--}}
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">{{ __('acl::role.permissions') }}</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <div class="card-body">
-                            <dnsoft-tree
-                                name="permissions"
-                                :data='@json(\Dnsoft\Acl\Facades\Permission::allTreeWithoutKey())'
-                                :value='@json(json_decode(object_get($item, 'permissions')))'
-                            ></dnsoft-tree>
                         </div>
                     </div>
                     <!-- /.card -->

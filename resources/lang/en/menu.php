@@ -2,7 +2,7 @@
 
 return [
     'name' => 'Name',
-    'slug' => 'Slug',
+    'slug' => 'Menu Key',
 
     'index' => [
         'page_title'    => 'Menu',
