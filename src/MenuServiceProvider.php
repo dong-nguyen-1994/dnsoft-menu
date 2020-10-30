@@ -48,7 +48,7 @@ class MenuServiceProvider extends BaseModuleServiceProvider
     public function registerAdminMenu()
     {
         Event::listen(CoreAdminMenuRegistered::class, function($menu) {
-            $menu->add('Menu', ['route' => 'menu.admin.menu.index', 'parent' => $menu->system->id])->data('order', 9);
+            $menu->add('Menu', ['route' => 'menu.admin.menu.index', 'parent' => $menu->system->id])->data('order', 9)->prepend('<i class="fas fa-equals"></i>');
         });
     }
 }
