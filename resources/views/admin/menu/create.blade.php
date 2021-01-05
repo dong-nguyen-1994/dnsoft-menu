@@ -11,7 +11,7 @@
                         <li class="breadcrumb-item active">{{ __('menu::menu.create.index') }}</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Collapsed Sidebar</h4>
+                <h4 class="page-title">{{ __('menu::menu.create.page_title') }}</h4>
             </div>
         </div>
     </div>

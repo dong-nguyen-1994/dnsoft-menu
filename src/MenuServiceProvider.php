@@ -15,8 +15,14 @@ use Illuminate\Support\Facades\Event;
 
 class MenuServiceProvider extends BaseModuleServiceProvider
 {
+    public function register()
+    {
+        parent::register();
 
-    public function getModuleNamespace()
+        $this->app->singleton('frontend-menu', FrontendMenuService::class);
+    }
+
+    public function getModuleNamespace(): string
     {
         return 'menu';
     }
@@ -48,7 +54,10 @@ class MenuServiceProvider extends BaseModuleServiceProvider
     public function registerAdminMenu()
     {
         Event::listen(CoreAdminMenuRegistered::class, function($menu) {
-            $menu->add('Menu', ['route' => 'menu.admin.menu.index', 'parent' => $menu->system->id])->data('order', 9)->prepend('<i class="fas fa-equals"></i>');
+            $menu->add('Menu', [
+                'route' => 'menu.admin.menu.index',
+                'parent' => $menu->system->id
+            ])->nickname('menu_root')->data('order', 9)->prepend('<i class="fas fa-equals"></i>');
         });
     }
 }

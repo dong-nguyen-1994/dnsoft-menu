@@ -2,6 +2,7 @@
 
 namespace Dnsoft\Menu\Http\Controllers\Admin;
 
+use Dnsoft\Core\Facades\MenuAdmin;
 use Dnsoft\Menu\Http\Requests\MenuRequest;
 use Dnsoft\Menu\Models\Menu;
 
@@ -41,7 +42,7 @@ class MenuController extends Controller
 
     public function create()
     {
-//        \AdminMenu::activeMenu('menu_root');
+        MenuAdmin::activeMenu('menu_root');
         $item = null;
         return view('menu::admin.menu.create', compact('item'));
     }
@@ -63,11 +64,11 @@ class MenuController extends Controller
 
     public function edit($id)
     {
-//        \AdminMenu::activeMenu('menu_root');
+        MenuAdmin::activeMenu('menu_root');
 
         $item = $this->menuRepository->find($id);
 
-//        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
+        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
 
         return view('menu::admin.menu.edit', compact('item'));
     }
@@ -79,12 +80,12 @@ class MenuController extends Controller
         if ($request->input('continue')) {
             return redirect()
                 ->route('menu.admin.menu.edit', $item->id)
-                ->with('success', __('menu::message.notification.updated'));
+                ->with('success', __('menu::menu.notification.updated'));
         }
 
         return redirect()
             ->route('menu.admin.menu.index')
-            ->with('success', __('menu::message.notification.updated'));
+            ->with('success', __('menu::menu.notification.updated'));
     }
 
     public function destroy($id, Request $request)

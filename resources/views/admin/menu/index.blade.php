@@ -10,7 +10,7 @@
                         <li class="breadcrumb-item active"><a href="{{ route('menu.admin.menu.index') }}">{{ __('menu::menu.index.page_title') }}</a></li>
                     </ol>
                 </div>
-                <h4 class="page-title">Collapsed Sidebar</h4>
+                <h4 class="page-title">{{ __('menu::menu.index.page_title') }}</h4>
             </div>
         </div>
     </div>
@@ -21,16 +21,11 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="header-title">Add &amp; Remove Rows</h4>
-                    <p class="sub-header">
-                        Add or remove rows from your FooTable.
-                    </p>
-
                     <div class="mb-2">
                         <div class="row">
                             <div class="col-12 text-sm-center form-inline">
                                 <div class="form-group mr-2">
-                                    <a id="demo-btn-addrow" class="btn btn-primary" href="{{ route('menu.admin.menu.create') }}"><i class="mdi mdi-plus-circle mr-2"></i> Add New Row</a>
+                                    <a id="demo-btn-addrow" class="btn btn-primary" href="{{ route('menu.admin.menu.create') }}"><i class="mdi mdi-plus-circle mr-2"></i> Add New</a>
                                 </div>
                                 <div class="form-group">
                                     <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
@@ -55,14 +50,21 @@
                             <tr>
                                 <td><a href="{{ route('menu.admin.menu.edit', $item->id) }}">{{ $item->id }}</a></td>
                                 <td><a href="{{ route('menu.admin.menu.edit', $item->id) }}">{{ $item->name }}</a></td>
-                                <td>{{ $item->slug }}</td>
+                                <td>
+                                    <code>{<span>!!</span> \Dnsoft\Menu\Facades\FrontendMenu::render('{{ $item->slug }}') !!}</code>
+                                </td>
                                 <td>{{ $item->created_at }}</td>
 {{--                                <td><span class="tag tag-success">Approved</span></td>--}}
                                 <td class="text-right">
-                                    <a href="{{ route('menu.admin.menu.edit', $item->id) }}" class="btn btn-success-soft btn-sm mr-1" style="background-color: rgb(167 244 255);color: #0fac04; width: 32px">
-                                        <i class="fas fa-pencil-alt" style="font-size: 15px; margin-left: -6px;"></i>
+                                    @admincan('menu.admin.menu.edit')
+                                    <a href="{{ route('menu.admin.menu.edit', $item->id) }}" class="btn btn-info-soft btn-sm mr-1" style="background-color: rgb(211 250 255); color: #0fac04; width: 32px;border-color: rgb(167 255 247); border: 1px solid" title="{{ trans('slider::slider-item.builder') }}">
+                                        <i class="fas fa-pencil-alt"  style="font-size: 15px; margin-left: -5px; margin-top: 5px"></i>
                                     </a>
+                                    @endadmincan
+
+                                    @admincan('menu.admin.menu.destroy')
                                     <button-delete url-delete="{{ route('menu.admin.menu.destroy', $item->id) }}"></button-delete>
+                                    @endadmincan
                                 </td>
                             </tr>
                                 @endforeach

@@ -29,4 +29,31 @@ return [
         'updated' => 'Menu successfully updated!',
         'deleted' => 'Menu successfully deleted!',
     ],
+    'menu_item' => [
+        'index' => [
+            'page_title'    => 'Menu Item',
+            'page_subtitle' => 'Menu Item',
+            'breadcrumb'    => 'Menu Item',
+        ],
+
+        'create' => [
+            'index' => 'Create',
+            'page_title'    => 'Create Menu Item',
+            'page_subtitle' => 'Create Menu Item',
+            'breadcrumb'    => 'Menu Item',
+        ],
+
+        'edit' => [
+            'index' => 'Edit',
+            'page_title'    => 'Edit Menu Item',
+            'page_subtitle' => 'Edit Menu Item',
+            'breadcrumb'    => 'Menu Item',
+        ],
+
+        'notification' => [
+            'created' => 'Menu Item successfully created!',
+            'updated' => 'Menu Item successfully updated!',
+            'deleted' => 'Menu Item successfully deleted!',
+        ],
+    ]
 ];

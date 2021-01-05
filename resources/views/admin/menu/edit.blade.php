@@ -11,7 +11,7 @@
                         <li class="breadcrumb-item active">{{ __('menu::menu.edit.index') }}</li>
                     </ol>
                 </div>
-                <h4 class="page-title">Collapsed Sidebar</h4>
+                <h4 class="page-title">{{ __('menu::menu.edit.page_title') }}</h4>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <form role="form" method="POST" action="{{ route('admin.role.update', $item->id) }}">
+        <form role="form" method="POST" action="{{ route('menu.admin.menu.update', $item->id) }}">
             @csrf
             @method('PUT')
             <div class="row">
@@ -28,7 +28,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Quick Example</h3>
+                            <h3 class="card-title">{{ __('menu::menu.edit.page_title') }}</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -46,7 +46,7 @@
                 <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">{{ __('menu::menu.permissions') }}</h3>
+                            <h3 class="card-title">{{ __('menu::menu.menu_item.index.page_title') }}</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
