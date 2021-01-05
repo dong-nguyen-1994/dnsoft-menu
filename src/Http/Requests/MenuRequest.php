@@ -11,7 +11,7 @@ class MenuRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,11 +21,19 @@ class MenuRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:menu__menus,slug,'.$this->route('id'),
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => __('menu::message.name'),
+            'slug' => __('menu::message.slug'),
         ];
     }
 }

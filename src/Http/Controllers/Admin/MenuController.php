@@ -10,6 +10,7 @@ use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Session;
 
 class MenuController extends Controller
 {
@@ -70,7 +71,7 @@ class MenuController extends Controller
 
         $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
 
-        return view('menu::admin.menu.edit', compact('item'));
+        return view('menu::admin.menu.edit', compact('item', 'menuItems'));
     }
 
     public function update(MenuRequest $request, $id)

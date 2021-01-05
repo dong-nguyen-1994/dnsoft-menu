@@ -41,6 +41,10 @@ class MenuServiceProvider extends BaseModuleServiceProvider
 
         $this->registerPermissions();
         $this->registerAdminMenu();
+
+        $this->publishes([
+            __DIR__ . '/../public' => public_path('vendor/menu'),
+        ], 'menu');
     }
 
     public function registerPermissions()

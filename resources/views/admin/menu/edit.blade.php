@@ -51,7 +51,7 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <div class="card-body">
-
+                            @include('menu::admin.menu.builder')
                         </div>
                     </div>
                     <!-- /.card -->
