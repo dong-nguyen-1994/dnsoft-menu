@@ -79,34 +79,39 @@ $(document).ready(function () {
             showCancelButton: true,
             cancelButtonText: 'Hủy',
             confirmButtonColor: "#DD6B55",
-            confirmButtonText: 'Xóa'
-        }, () => {
-            $.ajax({
-                url: urlDelete,
-                type: 'POST',
-                data: {
-                    _method: 'DELETE',
-                    _token: token,
-                },
-                success: function (r) {
-                    if (r.success) {
-                        $('#menuNestable').nestable('remove', r.id);
-                    } else {
+            confirmButtonText: 'Xóa',
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+        }).then( (willDelete) => {
+            if (willDelete) {
+                $.ajax({
+                    url: urlDelete,
+                    type: 'POST',
+                    data: {
+                        _method: 'DELETE',
+                        _token: token,
+                    },
+                    success: function (r) {
+                        if (r.success) {
+                            $('#menuNestable').nestable('remove', r.id);
+                        } else {
+                            swal({
+                                title: 'Error',
+                                text: e.message || 'Error',
+                                type: "error"
+                            });
+                        }
+                    },
+                    error: function (e) {
                         swal({
                             title: 'Error',
-                            text: e.message || 'Error',
+                            text: e.responseJSON.message || e.statusText,
                             type: "error"
                         });
-                    }
-                },
-                error: function (e) {
-                    swal({
-                        title: 'Error',
-                        text: e.responseJSON.message || e.statusText,
-                        type: "error"
-                    });
-                },
-            });
+                    },
+                });
+            }
         });
     });
 });

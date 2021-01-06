@@ -7,7 +7,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.role.index') }}">{{ __('menu::menu.edit.breadcrumb') }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('menu.admin.menu.index') }}">{{ __('menu::menu.edit.breadcrumb') }}</a></li>
                         <li class="breadcrumb-item active">{{ __('menu::menu.edit.index') }}</li>
                     </ol>
                 </div>

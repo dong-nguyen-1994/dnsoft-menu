@@ -8,6 +8,7 @@
 @push('scripts')
     <script>
         var menuItems = @json($menuItems);
+        console.log(menuItems)
         var menuId = '{{ $item->id }}';
     </script>
     <script src="{{ asset('vendor/dnsoft/admin/assets/libs/nestable2/jquery.nestable.min.js') }}"></script>

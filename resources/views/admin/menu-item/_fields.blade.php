@@ -7,7 +7,7 @@
                 'label' => __('menu::menu-item.menu_builder_class'),
                 'options' => [],
                 'allowClear' => true,
-{{--                'default' => \Newnet\Menu\MenuBuilders\UrlMenuBuilder::class--}}
+                'default' => \Newnet\Menu\MenuBuilders\UrlMenuBuilder::class
             ])
 
             <div class="menu-builder-wrap">
@@ -20,7 +20,7 @@
 
             @input(['name' => 'label', 'label' => __('menu::menu-item.label')])
 
-            @select(['name' => 'parent_id', 'label' => __('menu::menu-item.parent'), 'options' =>[] ])
+            @select(['name' => 'parent_id', 'label' => __('menu::menu-item.parent'), 'options' => module_menu__get_menu_item_parent_options($menu->id)])
             @select([
                 'name' => 'target',
                 'label' => __('menu::menu-item.target'),

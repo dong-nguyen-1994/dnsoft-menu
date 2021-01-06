@@ -50,7 +50,7 @@
 .dd-handle-tool .delete-item {
     color: #ffffff;
     display: inline-block;
-    padding: 8px 10px;
+    padding: 8px 10px 0 15px;
     height: 34px;
     vertical-align: top;
 }

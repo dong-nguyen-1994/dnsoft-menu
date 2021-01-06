@@ -52,4 +52,12 @@ class MenuItem extends Model
 
         return $this->menuBuilder;
     }
+
+    public function toArray(): array
+    {
+        $arr = parent::toArray();
+        $arr['label'] = $this->label;
+
+        return $arr;
+    }
 }

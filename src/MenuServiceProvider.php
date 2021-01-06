@@ -45,6 +45,8 @@ class MenuServiceProvider extends BaseModuleServiceProvider
         $this->publishes([
             __DIR__ . '/../public' => public_path('vendor/menu'),
         ], 'menu');
+
+        require_once __DIR__.'/../helpers/helpers.php';
     }
 
     public function registerPermissions()

@@ -23,5 +23,6 @@
         </li>
     @endforeach
 </ul>
-
-@php(Asset::container('footer')->add('bt4-navbar-hover-dropdown', 'vendor/menu/css/web/bt4-navbar-hover-dropdown.css'))
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('vendor/menu/web/css/bt4-navbar-hover-dropdown.css') }}">
+@endpush
