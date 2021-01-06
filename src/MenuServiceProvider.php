@@ -20,6 +20,8 @@ class MenuServiceProvider extends BaseModuleServiceProvider
         parent::register();
 
         $this->app->singleton('frontend-menu', FrontendMenuService::class);
+
+        $this->mergeConfigFrom(realpath(__DIR__.'/../config/menu.php'), 'menu');
     }
 
     public function getModuleNamespace(): string

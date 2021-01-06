@@ -3,6 +3,7 @@
 return [
     'name' => 'Name',
     'slug' => 'Menu Key',
+    'is_active' => 'Is Active',
 
     'index' => [
         'page_title'    => 'Menu',

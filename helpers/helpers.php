@@ -1,11 +1,12 @@
 <?php
 
-if (!function_exists('module_menu__get_menu_item_parent_options')) {
+if (!function_exists('module_menu__get_menu_item_parent_options'))
+{
     /**
      * @param $menuId
      * @return array
      */
-    function module_menu__get_menu_item_parent_options($menuId)
+    function module_menu__get_menu_item_parent_options($menuId): array
     {
         $options = [];
 
@@ -14,6 +15,23 @@ if (!function_exists('module_menu__get_menu_item_parent_options')) {
             $options[] = [
                 'value' => $item->id,
                 'label' => trim(str_pad('', $item->depth * 3, '-')).' '.$item->label,
+            ];
+        }
+
+        return $options;
+    }
+}
+
+if (!function_exists('module_menu__get_config_builder_type'))
+{
+    function module_menu__get_config_builder_type(): array
+    {
+        $options = [];
+        $builder_type = config('menu.builder_type');
+        foreach ($builder_type as $key => $item) {
+            $options[] = [
+                'value' => $key + 1,
+                'label' => $item,
             ];
         }
 

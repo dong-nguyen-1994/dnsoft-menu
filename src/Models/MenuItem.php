@@ -28,6 +28,11 @@ class MenuItem extends Model
         'menu_builder_class',
         'menu_builder_args',
         'parent_id',
+        'is_active',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
     ];
 
     public function menu()

@@ -23,6 +23,7 @@ class CreateMenuMenuItemsTable extends Migration
             $table->string('menu_builder_class')->nullable();
             $table->json('menu_builder_args')->nullable();
             $table->nestedSet();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
 
             $table->foreign('menu_id')->references('id')->on('menu__menus')->onDelete('cascade');

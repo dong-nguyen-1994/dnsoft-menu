@@ -14,6 +14,11 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'slug',
+        'is_active',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
     ];
 
     public function items()
