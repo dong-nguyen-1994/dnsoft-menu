@@ -1,5 +1,5 @@
 <div class="dd" id="menuNestable"></div>
-
+<hr>
 <a href="{{ route('menu.admin.menu-item.create', ['menu_id' => $item->id]) }}" class="btn btn-outline-primary">
     <i class="fas fa-plus"></i>
     {{ __('menu::menu.menu_item.create.page_title') }}
@@ -8,7 +8,6 @@
 @push('scripts')
     <script>
         var menuItems = @json($menuItems);
-        console.log(menuItems)
         var menuId = '{{ $item->id }}';
     </script>
     <script src="{{ asset('vendor/dnsoft/admin/assets/libs/nestable2/jquery.nestable.min.js') }}"></script>

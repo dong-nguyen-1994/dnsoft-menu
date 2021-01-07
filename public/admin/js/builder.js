@@ -49,15 +49,21 @@ $(document).ready(function () {
 
             var html = '<' + options.itemNodeName + item_attrs_string + '>';
             html += '<div class="dd-handle-group">';
+            html += '<div class="row">'
+            html += '<div class="col-md-8 text-left" style="float:right">'
             html += '<' + options.handleNodeName + ' class="' + options.handleClass + '">';
             html += '<' + options.contentNodeName + ' class="' + options.contentClass + '">';
             html += content;
             html += '</' + options.contentNodeName + '>';
             html += '</' + options.handleNodeName + '>';
+            html += '</div>';
+            html += '<div class="col-md-4 text-right mt-1">'
             html += '<div class="dd-handle-tool">';
             html += `<a href="${adminPath}/menu/menu-item/create?menu_id=${window.menuId}&parent_id=${item.id}" class="add-item" title="Add Item"><i class="fas fa-plus fa-fw"></i></a>`;
             html += `<a href="${adminPath}/menu/menu-item/${item.id}/edit" class="edit-item" title="Edit Item"><i class="fas fa-pencil-alt fa-fw"></i></a>`;
             html += `<a href="${adminPath}/menu/menu-item/${item.id}" class="delete-item" title="Delete Item"><i class="fas fa-times fa-fw"></i></a>`;
+            html += '</div>';
+            html += '</div>';
             html += '</div>';
             html += '</div>';
             html += children;
