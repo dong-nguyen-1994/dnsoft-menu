@@ -34,5 +34,7 @@ return [
         'created' => 'Menu Item successfully created!',
         'updated' => 'Menu Item successfully updated!',
         'deleted' => 'Menu Item successfully deleted!',
+        'move_up' => 'Menu Item successfully move up!',
+        'move_down' => 'Menu Item successfully move down!',
     ],
 ];

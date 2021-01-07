@@ -1,6 +1,6 @@
 <?php
 
-namespace Dnsoft\Menu;
+namespace Dnsoft\Menu\Services;
 
 use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;

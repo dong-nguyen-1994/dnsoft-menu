@@ -9,6 +9,7 @@ use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -32,7 +33,7 @@ class MenuController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index(Request $request)
     {
@@ -69,8 +70,8 @@ class MenuController extends Controller
 
         $item = $this->menuRepository->find($id);
 
-        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
-
+//        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
+        $menuItems = $this->menuItemRepository->getInTree();
         return view('menu::admin.menu.edit', compact('item', 'menuItems'));
     }
 

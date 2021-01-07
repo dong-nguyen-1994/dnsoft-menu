@@ -11,6 +11,7 @@ use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
 use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use Dnsoft\Menu\Services\FrontendMenuService;
 use Illuminate\Support\Facades\Event;
 
 class MenuServiceProvider extends BaseModuleServiceProvider

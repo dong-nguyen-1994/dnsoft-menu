@@ -3,10 +3,18 @@
 namespace Dnsoft\Menu\Repositories\Eloquents;
 
 use Dnsoft\Core\Repositories\BaseRepository;
+use Dnsoft\Core\Repositories\NestedRepositoryTrait;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 
 class MenuItemRepository extends BaseRepository implements MenuItemRepositoryInterface
 {
+    use NestedRepositoryTrait;
+
+    public function getInTree()
+    {
+        return $this->model->withDepth()->defaultOrder()->get();
+    }
+
     public function getTree($menuId, $columns = ['*'])
     {
         $columns = array_merge($columns, [

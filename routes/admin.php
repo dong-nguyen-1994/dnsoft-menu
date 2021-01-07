@@ -50,5 +50,13 @@ Route::prefix('menu')->group(function () {
 
         Route::post('update-tree', [MenuItemController::class, 'updateTree'])
             ->name('menu.admin.menu-item.update-tree');
+
+        Route::get('{id}/move-up', [MenuItemController::class, 'moveUp'])
+            ->name('menu.admin.menu-item.move-up')
+            ->middleware('admin.can:menu.admin.menu-item.edit');
+
+        Route::get('{id}/move-down', [MenuItemController::class, 'moveDown'])
+            ->name('menu.admin.menu-item.move-down')
+            ->middleware('admin.can:menu.admin.menu-item.edit');
     });
 });

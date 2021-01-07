@@ -36,7 +36,7 @@ class MenuItemController extends Controller
     {
         MenuAdmin::activeMenu('menu_root');
 
-        $menu = $this->menuRepository->find($request->input('menu_id'));
+        $menu = $this->menuRepository->getById($request->input('menu_id'));
         $item = new MenuItem();
         $item->parent_id = $request->input('parent_id');
 
@@ -105,5 +105,26 @@ class MenuItemController extends Controller
             'success' => true,
             'message' => __('menu::message.notification.updated'),
         ]);
+    }
+
+    public function moveUp($id)
+    {
+        $this->menuItemRepository->moveUp($id);
+        $menuItem = $this->menuItemRepository->getById($id);
+        $menu = $menuItem->menu()->first();
+
+        return redirect()
+            ->route('menu.admin.menu.edit', $menu->id)
+            ->with('success', __('menu::menu-item.notification.move_up'));
+    }
+
+    public function moveDown($id)
+    {
+        $this->menuItemRepository->moveDown($id);
+        $menuItem = $this->menuItemRepository->getById($id);
+        $menu = $menuItem->menu()->first();
+        return redirect()
+            ->route('menu.admin.menu.edit', $menu->id)
+            ->with('success', __('menu::menu-item.notification.move_down'));
     }
 }
