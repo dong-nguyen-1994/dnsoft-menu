@@ -51,7 +51,7 @@
                                 <td><a href="{{ route('menu.admin.menu.edit', $item->id) }}">{{ $item->id }}</a></td>
                                 <td><a href="{{ route('menu.admin.menu.edit', $item->id) }}">{{ $item->name }}</a></td>
                                 <td>
-                                    <code>{<span>!!</span> \Dnsoft\Menu\Facades\FrontendMenu::render('{{ $item->slug }}') !!}</code>
+                                    <code>{<span>!!</span> \FrontendMenu::render('{{ $item->slug }}') !!}</code>
                                 </td>
                                 <td>{{ $item->created_at }}</td>
 {{--                                <td><span class="tag tag-success">Approved</span></td>--}}

@@ -54,6 +54,7 @@ class FrontendMenuService
 
         return view($view)->with([
             'items' => $menuItems,
+            'level' => 1
         ]);
     }
 }

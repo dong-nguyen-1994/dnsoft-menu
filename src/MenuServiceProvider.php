@@ -5,6 +5,7 @@ namespace Dnsoft\Menu;
 use Dnsoft\Acl\Facades\Permission;
 use Dnsoft\Core\Events\CoreAdminMenuRegistered;
 use Dnsoft\Core\Support\BaseModuleServiceProvider;
+use Dnsoft\Menu\Facades\FrontendMenu;
 use Dnsoft\Menu\Models\Menu;
 use Dnsoft\Menu\Models\MenuItem;
 use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
@@ -12,6 +13,7 @@ use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
 use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
 use Dnsoft\Menu\Services\FrontendMenuService;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Event;
 
 class MenuServiceProvider extends BaseModuleServiceProvider
@@ -50,6 +52,8 @@ class MenuServiceProvider extends BaseModuleServiceProvider
         ], 'menu');
 
         require_once __DIR__.'/../helpers/helpers.php';
+
+        AliasLoader::getInstance()->alias('FrontendMenu', FrontendMenu::class);
     }
 
     public function registerPermissions()
