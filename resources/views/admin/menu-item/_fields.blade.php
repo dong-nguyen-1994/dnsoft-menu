@@ -40,6 +40,7 @@
             @input(['name' => 'icon', 'label' => __('menu::menu-item.icon'), 'helper' => __('menu::menu-item.icon_helper')])
             @input(['name' => 'class', 'label' => __('menu::menu-item.class')])
             @checkbox(['name' => 'is_active', 'label' => '' , 'placeholder' => __('menu::menu.is_active')])
+            @mediafile(['name' => 'image', 'label' => __('menu::menu-item.image'), 'conversion' => ''])
         </div>
     </div>
     <div class="col-12 col-lg-3">

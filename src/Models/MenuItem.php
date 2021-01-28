@@ -4,12 +4,14 @@ namespace Dnsoft\Menu\Models;
 
 use Dnsoft\Core\Support\Traits\TreeCacheableTrait;
 use Dnsoft\Core\Traits\TranslatableTrait;
+use Dnsoft\Media\Traits\HasMediaTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
     use TreeCacheableTrait;
     use TranslatableTrait;
+    use HasMediaTrait;
 
     protected $table = 'menu__menu_items';
 
@@ -29,6 +31,7 @@ class MenuItem extends Model
         'menu_builder_args',
         'parent_id',
         'is_active',
+        'image',
     ];
 
     protected $casts = [
@@ -64,5 +67,17 @@ class MenuItem extends Model
         $arr['label'] = $this->label;
 
         return $arr;
+    }
+
+    public function setImageAttribute($value)
+    {
+        static::saved(function ($model) use ($value) {
+            $model->syncMedia($value, 'image');
+        });
+    }
+
+    public function getImageAttribute()
+    {
+        return $this->getFirstMedia('image');
     }
 }

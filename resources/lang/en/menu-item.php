@@ -11,6 +11,7 @@ return [
     'menu_id'            => 'Menu ID',
     'menu_builder_class' => 'Builder Type',
     'parent'             => 'Parent',
+    'image'             => 'Image',
 
     'index' => [
         'page_title'    => 'Menu Item',
