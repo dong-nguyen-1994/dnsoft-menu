@@ -9,21 +9,21 @@
                 'label' => __('menu::menu-item.menu_builder_class'),
                 'options' => module_menu__get_config_builder_type(),
             ])
-            <div class="category" style="display: none">
+            <div class="menu-builder-wrap-category" style="display: none">
                 @select([
                     'name' => 'type_category',
                     'label' => __('Category'),
-                    'options' => get_catalog_all_categories(),
+                    'options' => get_catalog_category_parent_options(),
                 ])
             </div>
-            <div class="menu-builder-wrap page" style="display: none">
+            <div class="menu-builder-wrap-page" style="display: none">
                 @select([
                     'name' => 'type_page',
                     'label' => __('Page'),
                     'options' => module_menu__get_all_pages(),
                 ])
             </div>
-            <div class="menu-builder-wrap url" style="display: none">
+            <div class="menu-builder-wrap-url" style="display: none">
                 @input(['name' => 'type_url', 'label' => __('URL')])
             </div>
             @select(['name' => 'parent_id', 'label' => __('menu::menu-item.parent'), 'options' => module_menu__get_menu_item_parent_options($menu->id)])
