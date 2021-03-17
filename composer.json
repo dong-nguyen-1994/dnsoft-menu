@@ -8,7 +8,6 @@
             "email": "dong.joseph2810@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "lavary/laravel-menu": "~1.7",
         "kalnoy/nestedset": "^5.0"
