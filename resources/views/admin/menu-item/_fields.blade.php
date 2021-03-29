@@ -9,13 +9,15 @@
                 'label' => __('menu::menu-item.menu_builder_class'),
                 'options' => module_menu__get_config_builder_type(),
             ])
-            <div class="menu-builder-wrap-category" style="display: none">
-                @select([
+            @if (check_module_is_active('cms'))
+                <div class="menu-builder-wrap-category" style="display: none">
+                    @select([
                     'name' => 'type_category',
                     'label' => __('Category'),
-                    'options' => get_catalog_category_parent_options(),
-                ])
-            </div>
+                    'options' => get_cms_catalog_category_parent_options(),
+                    ])
+                </div>
+            @endif
             <div class="menu-builder-wrap-page" style="display: none">
                 @select([
                     'name' => 'type_page',
