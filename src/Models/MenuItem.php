@@ -2,7 +2,7 @@
 
 namespace Dnsoft\Menu\Models;
 
-use Dnsoft\Core\Support\Traits\TreeCacheableTrait;
+use Dnsoft\Core\Traits\TreeCacheableTrait;
 use Dnsoft\Core\Traits\TranslatableTrait;
 use Dnsoft\Media\Traits\HasMediaTrait;
 use Illuminate\Database\Eloquent\Model;
