@@ -70,8 +70,8 @@ class MenuController extends Controller
 
         $item = $this->menuRepository->find($id);
 
-//        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
-        $menuItems = $this->menuItemRepository->getInTree();
+        $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
+        //$menuItems = $this->menuItemRepository->getInTree();
         return view('menu::admin.menu.edit', compact('item', 'menuItems'));
     }
 

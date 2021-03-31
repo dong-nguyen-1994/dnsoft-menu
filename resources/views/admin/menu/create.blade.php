@@ -18,32 +18,30 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <form role="form" action="{{ route('menu.admin.menu.store') }}" method="POST">
-            @csrf
-            <div class="row">
-                <!-- left column -->
-                <div class="col-md-12">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">{{ __('menu::menu.create.page_title') }}</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-
-                        @include('menu::admin.menu._field')
-
-                        <!-- /.card-body -->
-
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">{{ __('core::button.save') }}</button>
-                            <button class="btn btn-secondary" name="continue" value="1" type="submit">{{ __('core::button.save_and_edit') }}</button>
-                        </div>
+    <form role="form" action="{{ route('menu.admin.menu.store') }}" method="POST">
+        @csrf
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ __('menu::menu.create.page_title') }}</h3>
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-header -->
+                    <!-- form start -->
+
+                    @include('menu::admin.menu._field')
+
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">{{ __('core::button.save') }}</button>
+                        <button class="btn btn-secondary" name="continue" value="1" type="submit">{{ __('core::button.save_and_edit') }}</button>
+                    </div>
                 </div>
+                <!-- /.card -->
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 @stop
