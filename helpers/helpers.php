@@ -30,7 +30,7 @@ if (!function_exists('module_menu__get_config_builder_type'))
         $builder_type = config('menu.builder_type');
         foreach ($builder_type as $key => $item) {
             $options[] = [
-                'value' => $key + 1,
+                'value' => strtolower($item),
                 'label' => $item,
             ];
         }

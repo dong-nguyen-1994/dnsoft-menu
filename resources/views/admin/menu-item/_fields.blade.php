@@ -14,7 +14,7 @@
                     @select([
                     'name' => 'type_category',
                     'label' => __('Category'),
-                    'options' => get_cms_catalog_category_parent_options(),
+                    'options' => get_cms_category_parent_options(),
                     ])
                 </div>
             @endif
