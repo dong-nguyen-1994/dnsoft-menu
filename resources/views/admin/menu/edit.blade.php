@@ -18,46 +18,43 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <form role="form" method="POST" action="{{ route('menu.admin.menu.update', $item->id) }}">
-            @csrf
-            @method('PUT')
-            <div class="row">
-                <!-- left column -->
-                <div class="col-md-6">
-                    <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">{{ __('menu::menu.edit.page_title') }}</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        @include('menu::admin.menu._field')
-                        <!-- /.card-body -->
-
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">{{ __('core::button.save') }}</button>
-                            <button class="btn btn-secondary" name="continue" value="1" type="submit">{{ __('core::button.save_and_edit') }}</button>
-                        </div>
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-md-6">
+    <form role="form" method="POST" action="{{ route('menu.admin.menu.update', $item->id) }}">
+        @csrf
+        @method('PUT')
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
                 <!-- general form elements -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">{{ __('menu::menu.menu_item.index.page_title') }}</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
-                        <div class="card-body">
-                            @include('menu::admin.menu.builderV2')
-                        </div>
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ __('menu::menu.edit.page_title') }}</h3>
                     </div>
-                    <!-- /.card -->
-                </div>
-            </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    @include('menu::admin.menu._field')
+                    <!-- /.card-body -->
 
-        </form>
-    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">{{ __('core::button.save') }}</button>
+                        <button class="btn btn-secondary" name="continue" value="1" type="submit">{{ __('core::button.save_and_edit') }}</button>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+            <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ __('menu::menu.menu_item.index.page_title') }}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <div class="card-body">
+                        @include('menu::admin.menu.builderV2')
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </form>
 @stop
