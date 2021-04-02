@@ -1,6 +1,6 @@
 {
     "name": "dnsoft/menu",
-    "description": "This is module core for all other module",
+    "description": "This is module menu. We can build a menu by this package. If you need to install, please contact me at dong.joseph2810@gmail.com to get a core module to run this package.",
     "type": "library",
     "authors": [
         {
