@@ -6,6 +6,7 @@ use Dnsoft\Core\Traits\TreeCacheableTrait;
 use Dnsoft\Core\Traits\TranslatableTrait;
 use Dnsoft\Media\Traits\HasMediaTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class MenuItem extends Model
 {
