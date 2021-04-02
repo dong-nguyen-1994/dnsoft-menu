@@ -14,7 +14,7 @@ class ChangeFieldMenuBuilderArgs extends Migration
     public function up()
     {
         Schema::table('menu__menu_items', function (Blueprint $table) {
-            $table->removeColumn('menu_builder_args', 'menu_builder_id');
+            $table->renameColumn('menu_builder_args', 'menu_builder_id');
         });
     }
 
