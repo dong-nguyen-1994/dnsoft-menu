@@ -28,7 +28,7 @@ class MenuItem extends Model
         'class',
         'target',
         'menu_builder_class',
-        'menu_builder_args',
+        'menu_builder_id',
         'parent_id',
         'is_active',
         'image',
@@ -43,22 +43,17 @@ class MenuItem extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function getUrl()
+    public function getUrlAttribute()
     {
-        if ($this->getMenuBuilder()) {
-            return $this->getMenuBuilder()->getFrontendUrl();
+        $builderType = config('menu.builder_type');
+        $builderClass = Str::ucfirst($this->menu_builder_class);
+        $param = $this->menu_builder_id;
+        $realClass = $builderType[$builderClass] ?? '';
+        if (class_exists($realClass)) {
+            $obj = $realClass::find($param);
+            return $obj->url;
         }
-
-        return null;
-    }
-
-    public function getMenuBuilder()
-    {
-        if (!$this->menuBuilder && class_exists($this->menu_builder_class)) {
-            $this->menuBuilder = app($this->menu_builder_class)->setArgs($this->menu_builder_args);
-        }
-
-        return $this->menuBuilder;
+        return $this->menu_builder_id;
     }
 
     public function toArray(): array

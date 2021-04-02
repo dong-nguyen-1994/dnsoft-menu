@@ -30,11 +30,28 @@ if (!function_exists('module_menu__get_config_builder_type'))
         $builder_type = config('menu.builder_type');
         foreach ($builder_type as $key => $item) {
             $options[] = [
-                'value' => strtolower($item),
-                'label' => $item,
+                'value' => strtolower($key),
+                'label' => $key,
             ];
         }
 
         return $options;
+    }
+}
+
+if (!function_exists('convert_param_save_menu_item'))
+{
+    function convert_param_save_menu_item($dataSave)
+    {
+        $builderType = config('menu.builder_type');
+        $field = 'menu_builder_';
+        $value = '';
+        foreach ($builderType as $key => $item) {
+            if ($dataSave[$field.strtolower($key)] && strtolower($key) == $dataSave['menu_builder_class']) {
+                $value = $dataSave[$field.strtolower($key)];
+                break;
+            }
+        }
+        return $value;
     }
 }
