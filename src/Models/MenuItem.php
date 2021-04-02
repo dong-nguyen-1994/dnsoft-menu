@@ -32,6 +32,7 @@ class MenuItem extends Model
         'parent_id',
         'is_active',
         'image',
+        'url',
     ];
 
     protected $casts = [

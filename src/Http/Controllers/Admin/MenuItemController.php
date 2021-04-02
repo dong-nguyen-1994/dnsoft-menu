@@ -48,7 +48,9 @@ class MenuItemController extends Controller
 
     public function store(MenuItemRequest $request)
     {
-        $item = $this->menuItemRepository->create($request->all());
+        $dataSave = $request->all();
+        $dataSave['menu_builder_id'] = convert_param_save_menu_item($dataSave);
+        $item = $this->menuItemRepository->create($dataSave);
 
         if ($request->input('continue')) {
             return redirect()
@@ -66,6 +68,10 @@ class MenuItemController extends Controller
         MenuAdmin::activeMenu('menu_root');
 
         $item = $this->menuItemRepository->find($id);
+
+        $field = 'menu_builder_'.$item->menu_builder_class;
+        $item[$field] = $item->menu_builder_id;
+
         $menu = $item->menu;
 
         return view('menu::admin.menu-item.edit')->with([
@@ -76,7 +82,9 @@ class MenuItemController extends Controller
 
     public function update(MenuItemRequest $request, $id)
     {
-        $item = $this->menuItemRepository->updateById($request->all(), $id);
+        $dataSave = $request->all();
+        $dataSave['menu_builder_id'] = convert_param_save_menu_item($dataSave);
+        $item = $this->menuItemRepository->updateById($dataSave, $id);
 
         if ($request->input('continue')) {
             return back()->with('success', __('menu::menu-item.notification.updated'));
