@@ -2,8 +2,8 @@
 
 return [
     'builder_type' => [
-        'Category',
-        'Page',
-        'URL',
+        'Category' => \Module\Cms\Models\Category::class,
+        'Page' => \Module\Cms\Models\Page::class,
+        'URL' => 'URL',
     ],
 ];

@@ -12,21 +12,21 @@
             @if (check_module_is_active('cms'))
                 <div class="menu-builder-wrap-category" style="display: none">
                     @select([
-                    'name' => 'type_category',
+                    'name' => 'menu_builder_category',
                     'label' => __('Category'),
                     'options' => get_cms_category_parent_options(),
                     ])
                 </div>
+                <div class="menu-builder-wrap-page" style="display: none">
+                    @select([
+                        'name' => 'menu_builder_page',
+                        'label' => __('Page'),
+                        'options' => module_menu__get_all_pages(),
+                    ])
+                </div>
             @endif
-            <div class="menu-builder-wrap-page" style="display: none">
-                @select([
-                    'name' => 'type_page',
-                    'label' => __('Page'),
-                    'options' => module_menu__get_all_pages(),
-                ])
-            </div>
             <div class="menu-builder-wrap-url" style="display: none">
-                @input(['name' => 'type_url', 'label' => __('URL')])
+                @input(['name' => 'menu_builder_url', 'label' => __('URL')])
             </div>
             @select(['name' => 'parent_id', 'label' => __('menu::menu-item.parent'), 'options' => module_menu__get_menu_item_parent_options($menu->id)])
             @select([

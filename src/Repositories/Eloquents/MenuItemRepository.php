@@ -25,9 +25,7 @@ class MenuItemRepository extends BaseRepository implements MenuItemRepositoryInt
 
         return $this->model
             ->where('menu_id', $menuId)
-            ->defaultOrder()
-            ->get($columns)
-            ->toTree();
+            ->withDepth()->defaultOrder()->get($columns);
     }
 
     public function updateTree(array $data)
