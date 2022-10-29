@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "lavary/laravel-menu": "~1.7",
-        "kalnoy/nestedset": "^5.0"
+        "lavary/laravel-menu": "^1.8",
+        "kalnoy/nestedset": "^6.0",
     },
     "autoload": {
         "psr-4": {
