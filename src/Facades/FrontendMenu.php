@@ -1,6 +1,6 @@
 <?php
 
-namespace Dnsoft\Menu\Facades;
+namespace DnSoft\Menu\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

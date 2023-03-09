@@ -1,10 +1,10 @@
 <?php
 
-namespace Dnsoft\Menu\Repositories\Eloquents;
+namespace DnSoft\Menu\Repositories\Eloquents;
 
-use Dnsoft\Core\Repositories\BaseRepository;
-use Dnsoft\Core\Repositories\NestedRepositoryTrait;
-use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
+use DnSoft\Core\Repositories\BaseRepository;
+use DnSoft\Core\Repositories\NestedRepositoryTrait;
+use DnSoft\Menu\Repositories\MenuItemRepositoryInterface;
 
 class MenuItemRepository extends BaseRepository implements MenuItemRepositoryInterface
 {

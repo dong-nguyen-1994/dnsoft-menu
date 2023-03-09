@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Dnsoft\\Menu\\": "src/"
+            "DnSoft\\Menu\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dnsoft\\Menu\\MenuServiceProvider"
+                "DnSoft\\Menu\\MenuServiceProvider"
             ]
         }
     }

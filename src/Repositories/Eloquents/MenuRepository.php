@@ -1,9 +1,9 @@
 <?php
 
-namespace Dnsoft\Menu\Repositories\Eloquents;
+namespace DnSoft\Menu\Repositories\Eloquents;
 
-use Dnsoft\Core\Repositories\BaseRepository;
-use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use DnSoft\Core\Repositories\BaseRepository;
+use DnSoft\Menu\Repositories\MenuRepositoryInterface;
 
 class MenuRepository extends BaseRepository implements MenuRepositoryInterface
 {

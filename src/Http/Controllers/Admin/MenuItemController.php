@@ -1,16 +1,16 @@
 <?php
 
-namespace Dnsoft\Menu\Http\Controllers\Admin;
+namespace DnSoft\Menu\Http\Controllers\Admin;
 
-use Dnsoft\Core\Facades\MenuAdmin;
+use DnSoft\Core\Facades\MenuAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Dnsoft\Menu\Http\Requests\MenuItemRequest;
-use Dnsoft\Menu\Models\MenuItem;
-use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
-use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
-use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
-use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use DnSoft\Menu\Http\Requests\MenuItemRequest;
+use DnSoft\Menu\Models\MenuItem;
+use DnSoft\Menu\Repositories\Eloquents\MenuItemRepository;
+use DnSoft\Menu\Repositories\Eloquents\MenuRepository;
+use DnSoft\Menu\Repositories\MenuItemRepositoryInterface;
+use DnSoft\Menu\Repositories\MenuRepositoryInterface;
 
 class MenuItemController extends Controller
 {
@@ -39,8 +39,8 @@ class MenuItemController extends Controller
         $menu = $this->menuRepository->getById($request->input('menu_id'));
         $item = new MenuItem();
         $item->parent_id = $request->input('parent_id');
-
-        return view('menu::admin.menu-item.create')->with([
+        $version = get_version_actived();
+        return view("menu::$version.admin.menu-item.create")->with([
             'menu' => $menu,
             'item' => $item,
         ]);
@@ -73,8 +73,8 @@ class MenuItemController extends Controller
         $item[$field] = $item->menu_builder_id;
 
         $menu = $item->menu;
-
-        return view('menu::admin.menu-item.edit')->with([
+        $version = get_version_actived();
+        return view("menu::$version.admin.menu-item.edit")->with([
             'menu' => $menu,
             'item' => $item,
         ]);

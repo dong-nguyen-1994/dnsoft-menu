@@ -1,8 +1,8 @@
 <?php
 
-namespace Dnsoft\Menu\Models;
+namespace DnSoft\Menu\Models;
 
-use Dnsoft\Core\Traits\CacheableTrait;
+use DnSoft\Core\Traits\CacheableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model

@@ -1,4 +1,4 @@
-@extends('core::admin.master')
+@extends('core::v2.admin.master')
 
 @section('content-header')
     <div class="row">

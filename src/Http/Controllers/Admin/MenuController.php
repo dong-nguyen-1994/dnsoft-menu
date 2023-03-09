@@ -1,13 +1,11 @@
 <?php
 
-namespace Dnsoft\Menu\Http\Controllers\Admin;
+namespace DnSoft\Menu\Http\Controllers\Admin;
 
-use Dnsoft\Core\Facades\MenuAdmin;
-use Dnsoft\Menu\Http\Requests\MenuRequest;
-use Dnsoft\Menu\Models\Menu;
-
-use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
-use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use DnSoft\Core\Facades\MenuAdmin;
+use DnSoft\Menu\Http\Requests\MenuRequest;
+use DnSoft\Menu\Repositories\MenuItemRepositoryInterface;
+use DnSoft\Menu\Repositories\MenuRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -38,15 +36,16 @@ class MenuController extends Controller
     public function index(Request $request)
     {
         $items = $this->menuRepository->paginate($request->input('max', 20));
-
-        return view('menu::admin.menu.index', compact('items'));
+        $version = get_version_actived();
+        return view("menu::$version.admin.menu.index", compact('items'));
     }
 
     public function create()
     {
         MenuAdmin::activeMenu('menu_root');
         $item = null;
-        return view('menu::admin.menu.create', compact('item'));
+        $version = get_version_actived();
+        return view("menu::$version.admin.menu.create", compact('item'));
     }
 
     public function store(MenuRequest $request)
@@ -72,7 +71,8 @@ class MenuController extends Controller
 
         $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
         //$menuItems = $this->menuItemRepository->getInTree();
-        return view('menu::admin.menu.edit', compact('item', 'menuItems'));
+        $version = get_version_actived();
+        return view("menu::$version.admin.menu.edit", compact('item', 'menuItems'));
     }
 
     public function update(MenuRequest $request, $id)

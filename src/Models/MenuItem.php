@@ -1,10 +1,10 @@
 <?php
 
-namespace Dnsoft\Menu\Models;
+namespace DnSoft\Menu\Models;
 
-use Dnsoft\Core\Traits\TreeCacheableTrait;
-use Dnsoft\Core\Traits\TranslatableTrait;
-use Dnsoft\Media\Traits\HasMediaTrait;
+use DnSoft\Core\Traits\TreeCacheableTrait;
+use DnSoft\Core\Traits\TranslatableTrait;
+use DnSoft\Media\Traits\HasMediaTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Dnsoft\Menu\Services;
+namespace DnSoft\Menu\Services;
 
-use Dnsoft\Menu\Models\Menu;
-use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
-use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
-use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
-use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
+use DnSoft\Menu\Models\Menu;
+use DnSoft\Menu\Repositories\Eloquents\MenuItemRepository;
+use DnSoft\Menu\Repositories\Eloquents\MenuRepository;
+use DnSoft\Menu\Repositories\MenuItemRepositoryInterface;
+use DnSoft\Menu\Repositories\MenuRepositoryInterface;
 
 class FrontendMenuService
 {

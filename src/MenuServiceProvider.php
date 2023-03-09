@@ -1,18 +1,18 @@
 <?php
 
-namespace Dnsoft\Menu;
+namespace DnSoft\Menu;
 
-use Dnsoft\Acl\Facades\Permission;
-use Dnsoft\Core\Events\CoreAdminMenuRegistered;
-use Dnsoft\Core\Support\BaseModuleServiceProvider;
-use Dnsoft\Menu\Facades\FrontendMenu;
-use Dnsoft\Menu\Models\Menu;
-use Dnsoft\Menu\Models\MenuItem;
-use Dnsoft\Menu\Repositories\Eloquents\MenuRepository;
-use Dnsoft\Menu\Repositories\Eloquents\MenuItemRepository;
-use Dnsoft\Menu\Repositories\MenuItemRepositoryInterface;
-use Dnsoft\Menu\Repositories\MenuRepositoryInterface;
-use Dnsoft\Menu\Services\FrontendMenuService;
+use DnSoft\Acl\Facades\Permission;
+use DnSoft\Core\Events\CoreAdminMenuRegistered;
+use DnSoft\Core\Support\BaseModuleServiceProvider;
+use DnSoft\Menu\Facades\FrontendMenu;
+use DnSoft\Menu\Models\Menu;
+use DnSoft\Menu\Models\MenuItem;
+use DnSoft\Menu\Repositories\Eloquents\MenuRepository;
+use DnSoft\Menu\Repositories\Eloquents\MenuItemRepository;
+use DnSoft\Menu\Repositories\MenuItemRepositoryInterface;
+use DnSoft\Menu\Repositories\MenuRepositoryInterface;
+use DnSoft\Menu\Services\FrontendMenuService;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Event;
 

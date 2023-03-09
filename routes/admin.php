@@ -1,7 +1,7 @@
 <?php
 
-use Dnsoft\Menu\Http\Controllers\Admin\MenuController;
-use Dnsoft\Menu\Http\Controllers\Admin\MenuItemController;
+use DnSoft\Menu\Http\Controllers\Admin\MenuController;
+use DnSoft\Menu\Http\Controllers\Admin\MenuItemController;
 
 Route::prefix('menu')->group(function () {
 //    Route::get('', [MenuController::class, 'index']);
