@@ -3,26 +3,32 @@
 namespace DnSoft\Menu\Models;
 
 use DnSoft\Core\Traits\CacheableTrait;
+use DnSoft\Core\Traits\TranslatableTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    use CacheableTrait;
+  use CacheableTrait;
+  use TranslatableTrait;
 
-    protected $table = 'menu__menus';
+  public $translatable = [
+    'name',
+  ];
 
-    protected $fillable = [
-        'name',
-        'slug',
-        'is_active',
-    ];
+  protected $table = 'menu__menus';
 
-    protected $casts = [
-        'is_active' => 'boolean',
-    ];
+  protected $fillable = [
+    'name',
+    'slug',
+    'is_active',
+  ];
 
-    public function items()
-    {
-        return $this->hasMany(MenuItem::class);
-    }
+  protected $casts = [
+    'is_active' => 'boolean',
+  ];
+
+  public function items()
+  {
+    return $this->hasMany(MenuItem::class);
+  }
 }
