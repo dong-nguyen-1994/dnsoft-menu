@@ -31,7 +31,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
 
-                    @include('menu::admin.menu._field')
+                    @include('menu::v1.admin.menu._field')
 
                     <!-- /.card-body -->
 

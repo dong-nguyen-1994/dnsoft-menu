@@ -31,7 +31,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    @include('menu::admin.menu._field')
+                    @include('menu::v1.admin.menu._field')
                     <!-- /.card-body -->
 
                     <div class="card-footer">
@@ -50,7 +50,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="card-body">
-                        @include('menu::admin.menu.builderV2')
+                        @include('menu::v1.admin.menu.builderV2')
                     </div>
                 </div>
                 <!-- /.card -->

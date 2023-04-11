@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-12 text-sm-center form-inline">
                             <div class="form-group mr-2">
-                                <a id="demo-btn-addrow" class="btn btn-primary" href="{{ route('menu.admin.menu.create') }}"><i class="mdi mdi-plus-circle mr-2"></i> Add New</a>
+                                <a id="demo-btn-addrow" class="btn btn-primary" href="{{ route('menu.admin.menu.create') }}"><i class="mdi mdi-plus-circle mr-2"></i> Add New Menu</a>
                             </div>
                             <div class="form-group">
                                 <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">

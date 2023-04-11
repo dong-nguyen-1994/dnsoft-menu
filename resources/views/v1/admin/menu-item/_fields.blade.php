@@ -9,22 +9,20 @@
                 'label' => __('menu::menu-item.menu_builder_class'),
                 'options' => module_menu__get_config_builder_type(),
             ])
-            @if (check_module_is_active('cms'))
-                <div class="menu-builder-wrap-category" style="display: none">
-                    @select([
-                    'name' => 'menu_builder_category',
-                    'label' => __('Category'),
-                    'options' => get_cms_category_parent_options(),
-                    ])
-                </div>
-                <div class="menu-builder-wrap-page" style="display: none">
-                    @select([
-                        'name' => 'menu_builder_page',
-                        'label' => __('Page'),
-                        'options' => module_menu__get_all_pages(),
-                    ])
-                </div>
-            @endif
+            <div class="menu-builder-wrap-category" style="display: none">
+                @select([
+                'name' => 'menu_builder_category',
+                'label' => __('Category'),
+                'options' => get_cms_category_parent_options(),
+                ])
+            </div>
+            <div class="menu-builder-wrap-page" style="display: none">
+                @select([
+                    'name' => 'menu_builder_page',
+                    'label' => __('Page'),
+                    'options' => module_menu__get_all_pages(),
+                ])
+            </div>
             <div class="menu-builder-wrap-url" style="display: none">
                 @input(['name' => 'menu_builder_url', 'label' => __('URL')])
             </div>
@@ -51,5 +49,5 @@
 </div>
 
 @push('scripts')
-    <script src="{{ asset('vendor/menu/admin/js/builditem.js') }}"></script>
+    <script src="{{ asset('vendor/menu/v1/admin/js/builditem.js') }}"></script>
 @endpush

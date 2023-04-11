@@ -48,8 +48,12 @@ class MenuServiceProvider extends BaseModuleServiceProvider
     $this->registerAdminMenu();
 
     $this->publishes([
-      __DIR__ . '/../public' => public_path('vendor/menu'),
-    ], 'menu');
+      __DIR__ . '/../public/v1' => public_path('vendor/menu/v1'),
+    ], 'dnsoft-menu-v1');
+
+    $this->publishes([
+      __DIR__ . '/../public/v2' => public_path('vendor/menu/v2'),
+    ], 'dnsoft-menu-v2');
 
     require_once __DIR__ . '/../helpers/helpers.php';
 
@@ -70,7 +74,7 @@ class MenuServiceProvider extends BaseModuleServiceProvider
       $menu->add('Menu', [
         'route' => 'menu.admin.menu.index',
         'parent' => $menu->system->id
-      ])->nickname('menu_root')->data('order', 9);
+      ])->nickname('menu_root')->data('order', 9)->prepend('<i class="fas fa-equals"></i>');
     });
   }
 }

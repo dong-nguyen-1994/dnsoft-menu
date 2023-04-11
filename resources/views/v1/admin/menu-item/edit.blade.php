@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="card-body">
-                @include('menu::admin.menu-item._fields', ['item' => $item])
+                @include('menu::v1.admin.menu-item._fields', ['item' => $item])
             </div>
             <div class="card-footer">
                 <div class="btn-group">
