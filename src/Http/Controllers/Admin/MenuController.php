@@ -94,7 +94,7 @@ class MenuController extends Controller
     {
         $this->menuRepository->delete($id);
 
-        if ($request->wantsJson()) {
+        if ($request->ajax()) {
             Session::flash('success', __('menu::message.notification.deleted'));
             return response()->json([
                 'success' => true,

@@ -62,7 +62,7 @@
                                 @endadmincan
 
                                 @admincan('menu.admin.menu.destroy')
-                                <button-delete url-delete="{{ route('menu.admin.menu.destroy', $item->id) }}"></button-delete>
+                                <x-button-delete-v1 url="{{ route('menu.admin.menu.destroy', $item->id) }}"></x-button-delete-v1>
                                 @endadmincan
                             </td>
                         </tr>
