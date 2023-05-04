@@ -1,6 +1,6 @@
 @extends('core::v1.admin.master')
 
-@section('content-header')
+@section('breadcrumbs')
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">

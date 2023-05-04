@@ -2,6 +2,7 @@
 
 namespace DnSoft\Menu\Services;
 
+use DnSoft\Core\Utils\BuildTree;
 use DnSoft\Menu\Models\Menu;
 use DnSoft\Menu\Repositories\Eloquents\MenuItemRepository;
 use DnSoft\Menu\Repositories\Eloquents\MenuRepository;
@@ -46,6 +47,8 @@ class FrontendMenuService
 
         $menuItems = $this->menuItemRepository->getTree($menu->id);
 
+        $menuItems = BuildTree::buildMenuTree($menuItems);
+
         if (!$view || !view()->exists($view)) {
             if (!$view || !view()->exists($view = "menu::menu-render.{$view}")) {
                 $view = 'menu::menu-render.default';
@@ -53,7 +56,7 @@ class FrontendMenuService
         }
 
         return view($view)->with([
-            'items' => $menuItems,
+            'menuItems' => $menuItems,
             'level' => 1
         ]);
     }
