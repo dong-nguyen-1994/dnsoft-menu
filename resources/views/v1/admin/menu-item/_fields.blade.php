@@ -7,12 +7,25 @@
       'name' => 'menu_builder_class',
       'label' => __('menu::menu-item.menu_builder_class'),
       'options' => module_menu__get_config_builder_type(),
+      'is_label' => true
       ])
-      <div class="menu-builder-wrap-category" style="display: none">
+      
+      @if (is_module_actived('catalog'))
+      <div class="menu-builder-wrap-productcategory" style="display: none">
         @select([
-        'name' => 'menu_builder_category',
+        'name' => 'menu_builder_productcategory',
+        'label' => __('Product Category'),
+        'options' => get_catalog_category_parent_options(),
+        'is_label' => true
+        ])
+      </div>
+      @endif
+      <div class="menu-builder-wrap-cmscategory" style="display: none">
+        @select([
+        'name' => 'menu_builder_cmscategory',
         'label' => __('Category'),
         'options' => get_cms_category_parent_options(),
+        'is_label' => true
         ])
       </div>
       <div class="menu-builder-wrap-page" style="display: none">
@@ -20,15 +33,23 @@
         'name' => 'menu_builder_page',
         'label' => __('Page'),
         'options' => module_menu__get_all_pages(),
+        'is_label' => true
         ])
       </div>
       <div class="menu-builder-wrap-url" style="display: none">
         @input(['name' => 'menu_builder_url', 'label' => __('URL')])
       </div>
-      @select(['name' => 'parent_id', 'label' => __('menu::menu-item.parent'), 'options' => module_menu__get_menu_item_parent_options($menu->id)])
+      @select([
+        'name' => 'parent_id',
+        'label' => __('Parent menu'),
+        'options' => module_menu__get_menu_item_parent_options($menu->id),
+        'is_label' => true
+      ])
+      
       @select([
       'name' => 'target',
       'label' => __('menu::menu-item.target'),
+      'is_label' => true,
       'options' => [
           ['value' => '_self', 'label' => __('menu::menu-item.self')],
           ['value' => '_blank', 'label' => __('menu::menu-item.blank')],

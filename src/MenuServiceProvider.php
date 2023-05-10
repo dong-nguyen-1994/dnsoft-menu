@@ -55,6 +55,10 @@ class MenuServiceProvider extends BaseModuleServiceProvider
       __DIR__ . '/../public/v2' => public_path('vendor/menu/v2'),
     ], 'dnsoft-menu-v2');
 
+    $this->publishes([
+      __DIR__ . '/../config/menu.php' => config_path('menu.php'),
+    ], 'dnsoft-menu-config');
+
     require_once __DIR__ . '/../helpers/helpers.php';
 
     AliasLoader::getInstance()->alias('FrontendMenu', FrontendMenu::class);

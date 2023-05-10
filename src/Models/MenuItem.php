@@ -52,10 +52,16 @@ class MenuItem extends Model
     $builderType = config('menu.builder_type');
     $builderClass = Str::ucfirst($this->menu_builder_class);
     $param = $this->menu_builder_id;
-    $realClass = $builderType[$builderClass] ?? '';
+    $arrNeedConvert = config('menu.need_convert');
+    $arrKeyNeedConvert = array_keys($arrNeedConvert);
+    if (in_array($builderClass, $arrKeyNeedConvert)) {
+      $realClass = $arrNeedConvert[$builderClass];
+    } else {
+      $realClass = $builderType[$builderClass] ?? '';
+    }
     if (class_exists($realClass)) {
       $obj = $realClass::find($param);
-      return $obj->url;
+      return $obj ? $obj->url : $this->menu_builder_id;
     }
     return $this->menu_builder_id;
   }
