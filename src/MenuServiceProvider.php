@@ -48,8 +48,8 @@ class MenuServiceProvider extends BaseModuleServiceProvider
     $this->registerAdminMenu();
 
     $this->publishes([
-      __DIR__ . '/../public/v1' => public_path('vendor/menu/v1'),
-    ], 'dnsoft-menu');
+      __DIR__ . '/../public' => public_path('vendor/menu'),
+    ], 'dnsoft-menu-asset');
 
     $this->publishes([
       __DIR__ . '/../config/menu.php' => config_path('menu.php'),

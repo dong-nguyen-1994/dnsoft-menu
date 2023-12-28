@@ -55,7 +55,7 @@ class MenuItemController extends Controller
     try {
       $item = $this->menuItemRepository->create($dataSave);
     } catch (\Throwable $th) {
-      //throw $th;
+      throw $th;
     }
     $item = MenuItem::latest()->first();
 

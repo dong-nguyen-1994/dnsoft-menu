@@ -21,7 +21,7 @@ class CreateMenuMenuItemsTable extends Migration
             $table->string('class')->nullable();
             $table->string('target', 10)->nullable();
             $table->string('menu_builder_class')->nullable();
-            $table->json('menu_builder_id')->nullable();
+            $table->text('menu_builder_id')->nullable();
             $table->nestedSet();
             $table->boolean('is_active')->default(true);
             $table->timestamps();

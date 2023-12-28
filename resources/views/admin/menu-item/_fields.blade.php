@@ -67,7 +67,7 @@
     @translatable(['checkKey' => 'label'])
     <hr>
     Image
-    @mediaV1(['name' => 'image', 'id' => 'image-component-1', 'type' => 'image', 'show_button' => true])
+    @media(['name' => 'image', 'conversion' => 'image', 'id' => 'image-component-1', 'show_button' => true, 'label' => 'Upload image'])
   </div>
 </div>
 

@@ -4,8 +4,7 @@ namespace DnSoft\Menu\Models;
 
 use DnSoft\Core\Traits\TreeCacheableTrait;
 use DnSoft\Core\Traits\TranslatableTrait;
-use DnSoft\Media\Traits\HasMediaTraitV2;
-// use DnSoft\Media\Traits\HasMediaTrait;
+use DnSoft\Media\Traits\HasMediaTraitV3;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -13,8 +12,7 @@ class MenuItem extends Model
 {
   use TreeCacheableTrait;
   use TranslatableTrait;
-  // use HasMediaTrait;
-  use HasMediaTraitV2;
+  use HasMediaTraitV3;
 
   protected $table = 'menu__menu_items';
 
@@ -76,17 +74,15 @@ class MenuItem extends Model
 
   public function setImageAttribute($value)
   {
-    static::saved(function ($model) use ($value) {
-      $model->syncMedia($value, 'image');
-    });
+    $this->mediaAttributes['image'] = $value;
   }
 
   public function getImageAttribute()
   {
-    return $this->getFirstMedia();
+    return $this->getFirstMedia($this->getMediaConversion());
   }
 
-  public function getImageName()
+  public function getMediaConversion()
   {
     return 'image';
   }
