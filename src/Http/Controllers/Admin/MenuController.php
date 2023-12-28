@@ -35,17 +35,20 @@ class MenuController extends Controller
    */
   public function index(Request $request)
   {
-    $items = $this->menuRepository->paginate($request->input('max', 20));
-    $version = get_version_actived();
-    return view("menu::$version.admin.menu.index", compact('items'));
+    if (request('keyword')) {
+      $items = $this->menuRepository->paginateWithSearch('name', 10);
+    } else {
+      $items = $this->menuRepository->paginate($request->input('max', 10));
+    }
+    return view("menu::admin.menu.index", compact('items'));
   }
 
   public function create()
   {
     MenuAdmin::activeMenu('menu_root');
     $item = null;
-    $version = get_version_actived();
-    return view("menu::$version.admin.menu.create", compact('item'));
+
+    return view("menu::admin.menu.create", compact('item'));
   }
 
   public function store(MenuRequest $request)
@@ -71,8 +74,8 @@ class MenuController extends Controller
 
     $menuItems = $this->menuItemRepository->getTree($item->id, ['id', 'parent_id', 'label']);
     //$menuItems = $this->menuItemRepository->getInTree();
-    $version = get_version_actived();
-    return view("menu::$version.admin.menu.edit", compact('item', 'menuItems'));
+
+    return view("menu::admin.menu.edit", compact('item', 'menuItems'));
   }
 
   public function update(MenuRequest $request, $id)

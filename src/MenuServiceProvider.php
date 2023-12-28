@@ -49,11 +49,7 @@ class MenuServiceProvider extends BaseModuleServiceProvider
 
     $this->publishes([
       __DIR__ . '/../public/v1' => public_path('vendor/menu/v1'),
-    ], 'dnsoft-menu-v1');
-
-    $this->publishes([
-      __DIR__ . '/../public/v2' => public_path('vendor/menu/v2'),
-    ], 'dnsoft-menu-v2');
+    ], 'dnsoft-menu');
 
     $this->publishes([
       __DIR__ . '/../config/menu.php' => config_path('menu.php'),

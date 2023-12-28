@@ -1,4 +1,6 @@
-@extends('core::v1.admin.master')
+@extends('core::admin.master')
+
+@section('meta_title', __('menu::menu.edit.page_title'))
 
 @section('breadcrumbs')
     <div class="row">
@@ -31,7 +33,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    @include('menu::v1.admin.menu._field')
+                    @include('menu::admin.menu._field')
                     <!-- /.card-body -->
 
                     <div class="card-footer">
@@ -50,7 +52,7 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     <div class="card-body">
-                        @include('menu::v1.admin.menu.builderV2')
+                        @include('menu::admin.menu.builderV2')
                     </div>
                 </div>
                 <!-- /.card -->

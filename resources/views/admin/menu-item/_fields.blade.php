@@ -72,5 +72,5 @@
 </div>
 
 @push('scripts')
-<script src="{{ asset('vendor/menu/v1/admin/js/builditem.js') }}"></script>
+<script src="{{ asset('vendor/menu/admin/js/builditem.js') }}"></script>
 @endpush

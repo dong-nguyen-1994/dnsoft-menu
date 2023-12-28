@@ -40,8 +40,8 @@ class MenuItemController extends Controller
     $menu = $this->menuRepository->getById($request->input('menu_id'));
     $item = new MenuItem();
     $item->parent_id = $request->input('parent_id');
-    $version = get_version_actived();
-    return view("menu::$version.admin.menu-item.create")->with([
+    
+    return view("menu::admin.menu-item.create")->with([
       'menu' => $menu,
       'item' => $item,
     ]);
@@ -79,8 +79,8 @@ class MenuItemController extends Controller
     $item[$field] = $item->menu_builder_id;
 
     $menu = $item->menu;
-    $version = get_version_actived();
-    return view("menu::$version.admin.menu-item.edit")->with([
+    
+    return view("menu::admin.menu-item.edit")->with([
       'menu' => $menu,
       'item' => $item,
     ]);

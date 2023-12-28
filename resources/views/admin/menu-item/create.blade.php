@@ -1,4 +1,4 @@
-@extends('core::v1.admin.master')
+@extends('core::admin.master')
 
 @section('meta_title', __('menu::menu-item.create.page_title'))
 
